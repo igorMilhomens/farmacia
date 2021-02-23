@@ -1,0 +1,11 @@
+package org.generation.farmacia.repository;
+
+import java.util.List;
+
+import org.generation.farmacia.model.Categoria;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoriaRepository extends JpaRepository <Categoria, Long> {
+	public List<Categoria> findAllByTipoContainingIgnoreCase(String tipo);
+	//findAll - BUSCAR TUDO, 'Tipo' - VARIAVEL  PARA BUSCA, ContainingIgnoreCase - VAI PEGAR TUDO QUE ESTIVER DENTRO DA VARIAVEL SEM LEVAR EM CONSIDERAÇÃO MAIUSCULO OU MINUSCULO
+ }
